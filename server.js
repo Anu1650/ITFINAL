@@ -8,9 +8,9 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 
 // Homepage routes
-app.get("/", (req, res) => res.render("homepage"));
-app.get("/Homepage", (req, res) => res.render("homepage"));
-app.get("/homepage", (req, res) => res.render("homepage"));
+app.get("/", (req, res) => res.render("Homepage"));
+app.get("/Homepage", (req, res) => res.render("Homepage"));
+app.get("/homepage", (req, res) => res.render("Homepage"));
 
 // Other pages routes
 const pages = [
