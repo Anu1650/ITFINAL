@@ -1,44 +1,35 @@
-const express = require('express');
-const path = require('path');
+const express = require("express");
+const path = require("path");
 const app = express();
 
-// Set EJS as templating engine
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
-// Serve static files from /public
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
-// Helper function to render page safely
-const renderPage = (res, pageName) => {
-  res.render(pageName.toLowerCase()); // e.g., 'AboutUs' → 'aboutus.ejs'
-};
+// Homepage routes
+app.get("/", (req, res) => res.render("homepage"));
+app.get("/Homepage", (req, res) => res.render("homepage"));
+app.get("/homepage", (req, res) => res.render("homepage"));
 
-// ✅ Homepage Routes (case-insensitive)
-app.get(['/', '/Homepage', '/homepage'], (req, res) => {
-  renderPage(res, 'homepage');
-});
-app.get(['/', '/Homepage', '/homepage'], (req, res) => {
-  renderPage(res, 'Homepage');
-});
-
-// ✅ Page Routes
+// Other pages routes
 const pages = [
-  'AboutUs', 'mid-brain', 'blogs', 'Contact', 'Counseling', 'dbit', 'f',
-  'g', 'nlp', 'memory-techniques', 'personality', 'step', 'kmep',
-  'ycep', 'w1', 'w2', 'w3','Homepage'
+  "AboutUs", "mid-brain", "blogs", "Contact", "Counseling", "dbit",
+  "f", "g", "nlp", "memory-techniques", "personality", "step",
+  "kmep", "ycep", "w1", "w2", "w3"
 ];
 
-pages.forEach((page) => {
-  app.get(`/${page}`, (req, res) => renderPage(res, page));
+pages.forEach(page => {
+  app.get(`/${page}`, (req, res) => {
+    res.render(page);
+  });
 });
 
-// ✅ 404 Error Handling (Render custom EJS page)
+// 404 fallback for unknown routes
 app.use((req, res) => {
-  res.status(404).render('404'); // views/404.ejs must exist
+  res.status(404).send("404 - Page Not Found");
 });
 
-// ✅ Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅ Server running at: http://localhost:${PORT}`);
