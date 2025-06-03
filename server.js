@@ -18,12 +18,15 @@ const renderPage = (res, pageName) => {
 app.get(['/', '/Homepage', '/homepage'], (req, res) => {
   renderPage(res, 'homepage');
 });
+app.get(['/', '/Homepage', '/homepage'], (req, res) => {
+  renderPage(res, 'Homepage');
+});
 
 // ✅ Page Routes
 const pages = [
   'AboutUs', 'mid-brain', 'blogs', 'Contact', 'Counseling', 'dbit', 'f',
   'g', 'nlp', 'memory-techniques', 'personality', 'step', 'kmep',
-  'ycep', 'w1', 'w2', 'w3'
+  'ycep', 'w1', 'w2', 'w3','Homepage'
 ];
 
 pages.forEach((page) => {
