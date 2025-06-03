@@ -24,7 +24,9 @@ app.get('/', (req, res) => {
 app.get('/Homepage', (req, res) => {
   res.render('homepage');
 });
-
+app.get('/Homepage', (req, res) => {
+  res.render('Homepage');
+});
 app.get('/homepage', (req, res) => {
   res.render('homepage');
 });
