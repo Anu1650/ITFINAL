@@ -10,7 +10,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // List of EJS page names (without extension)
-const pages = ['Homepage', 'AboutUs', 'mid-brain','blogs','Contact','Counseling','dbit','f','g'];
+const pages = ['Homepage', 'AboutUs', 'mid-brain','blogs','Contact','Counseling','dbit','f','g','nlp','memory-techniques','personality','step','kmep','ycep','w1','w2','w3'];
 
 // Dynamic route handling
 pages.forEach(page => {

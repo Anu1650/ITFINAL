@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NLP - BuzyBrain Intellect</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    /* HEADER */
+    .box {
+      background-color: rgb(209, 205, 205);
+      height: auto;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .box img.s {
+      max-width: 180px;
+      height: auto;
+      margin-right: 30px;
+    }
+
+    .logo {
+      height: 60px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: darkblue;
+      padding: 10px 15px;
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: blanchedalmond;
+      color: darkblue;
+      border-radius: 4px;
+    }
+
+    nav ul ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      background-color: white;
+      z-index: 10;
+      min-width: 180px;
+      border: 1px solid #ccc;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li:hover > ul {
+      display: block;
+    }
+
+    nav ul ul li a {
+      padding: 10px 15px;
+      color: darkblue;
+      display: block;
+      font-weight: 400;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    nav ul ul li a:hover {
+      background-color: blanchedalmond;
+      color: #0d3a6f;
+    }
+
+    .arrow {
+      font-size: 0.85rem;
+      margin-left: 6px;
+      transition: transform 0.3s ease;
+      display: inline-block;
+    }
+
+    li.nav-item.dropdown:hover .arrow {
+      transform: rotate(180deg);
+    }
+
+    @media (max-width: 991px) {
+      .box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav.n ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      nav.n ul li {
+        float: none;
+        width: 100%;
+      }
+
+      nav.n ul ul {
+        position: static;
+        display: none;
+        padding-left: 20px;
+      }
+
+      nav.n ul li:hover > ul {
+        display: block;
+      }
+    }
+
+    h2, h1 {
+      color: rgb(15, 75, 143);
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .card p {
+      padding: 0 20px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .footer {
+      background-color: rgb(26, 60, 103);
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .benefit-img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+    .benefit-box {
+      margin-bottom: 40px;
+    }
+
+    .container-fluid.bg-blue {
+      background-color: rgb(22, 119, 148);
+      padding: 60px 0;
+    }
+
+    .container-fluid.bg-grey {
+      background-color: rgb(202, 199, 196);
+      padding: 60px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <nav class="navbar navbar-expand-lg" style="background-color:#d1d4d8">
+    <div class="container-fluid">
+        <img src="/images/logo-removebg-preview.png" alt="Logo" class="logo" />
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="/Homepage">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/AboutUs">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#">Services <span class="arrow">&#9662;</span></a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/dbit">DBIT</a></li>
+              <li><a class="dropdown-item" href="/counseling">Counseling</a></li>
+              <li><a class="dropdown-item" href="/nlp">NLP</a></li>
+              <li><a class="dropdown-item" href="/mid-brain">Mid Brain</a></li>
+              <li><a class="dropdown-item" href="/memory-techniques">Memory Techniques</a></li>
+              <li><a class="dropdown-item" href="/personality">Personality Development</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#">Courses <span class="arrow">&#9662;</span></a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/step">STEP</a></li>
+              <li><a class="dropdown-item" href="/kmep">KMEP</a></li>
+              <li><a class="dropdown-item" href="/ycep">YCEP</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#">Workshop <span class="arrow">&#9662;</span></a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/w1">Joy of Parenting</a></li>
+              <li><a class="dropdown-item" href="/w2">Subconscious Mind Power</a></li>
+              <li><a class="dropdown-item" href="/w3">Teachers Illuminating</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/f">Franchise</a></li>
+          <li class="nav-item"><a class="nav-link" href="/blogs">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="/g">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/Contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- NLP Section -->
+  <h2>NLP (Neuro-Linguistic Programming)</h2>
+  <div class="container-fluid bg-blue text-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4">
+          <div class="card p-4">
+            <h4 class="text-primary text-center"><b>Get rid of lack of confidence, depression and focus on happiness, goal setting, etc…</b></h4>
+            <p>
+              Every child is unique and born with limitless mind power, but lack in accomplishing goals. They don’t use their mind power at full extent, as they don’t know how to utilize the subconscious mind power. NLP - ‘Neuro’ means related to the brain, ‘Linguistic’ is about language and behavioral patterns, ‘Programming’ refers to developing habits and experience.<br><br>
+              NLP enables you to achieve the results that you want in each area of life. It is a powerful technique based on the power of your subconscious mind. NLP helps us to get out of fear, phobia, anxiety & depression. We believe in NLP because the mind is a good healer of each and every ailment & disease.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6 mb-4 text-center">
+          <img src="/images/npl2.jpg" alt="NLP Image" class="img-fluid rounded shadow" style="max-height: 500px;" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Science Behind NLP -->
+  <div class="container-fluid bg-grey">
+    <div class="container">
+      <h1>Science Behind NLP</h1>
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4">
+          <p>
+            NLP was started in the 1970s by Richard Bandler and John Grinder in California. It is an approach to communication, personal development and psychotherapy. Their studies laid the foundation for many NLP techniques.<br><br>
+            These are used in coaching, sales, marketing, self-development, and more. NLP focuses on both verbal and non-verbal communication. It also explores inner communication and how to take control of your mind constructively. For example, if you're nervous hosting a dinner, an NLP practitioner can help uncover why — it's about how you're communicating with yourself.
+          </p>
+        </div>
+        <div class="col-lg-6 mb-4 text-center">
+          <img src="/images/nlp1.jpg" alt="Science of NLP" class="img-fluid rounded shadow" style="max-height: 500px;" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Benefits Section -->
+  <div class="container py-5">
+    <h2>Benefits of NLP</h2>
+    <div class="row text-center">
+      <div class="col-md-6 col-lg-3 benefit-box">
+        <img src="/images/1st.jpg" alt="Benefit 1" class="benefit-img" />
+        <p>NLP can help your children become super-achievers in their studies and life.</p>
+      </div>
+      <div class="col-md-6 col-lg-3 benefit-box">
+        <img src="/images/2nd.jpg" alt="Benefit 2" class="benefit-img" />
+        <p>Set up your Goal With Visualization Power.</p>
+      </div>
+      <div class="col-md-6 col-lg-3 benefit-box">
+        <img src="/images/3td.jpg" alt="Benefit 3" class="benefit-img" />
+        <p>Take control of unwanted habits effortlessly with Mobile Lock Habits.</p>
+      </div>
+      <div class="col-md-6 col-lg-3 benefit-box">
+        <img src="/images/4th.jpg" alt="Benefit 4" class="benefit-img" />
+        <p>Create triggers for Confidence, Motivation & Happiness.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    &copy; 2019 buzybrainintellect.com
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
